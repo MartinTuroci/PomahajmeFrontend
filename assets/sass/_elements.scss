@@ -1,0 +1,87 @@
+@mixin scale-transition($ratio: 1.2, $duration: 0.5s) {
+  transform: scale($ratio);
+  transition: transform $duration;
+}
+
+@mixin textInputStyle {
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 10px 12px -7px $black;
+  -moz-box-shadow: 0px 10px 12px -7px $black;
+  box-shadow: 0px 10px 12px -7px $black;
+  text-align: center;
+  width: 200px;
+  @include scale-transition(1);
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  width: fit-content;
+}
+
+button a {
+  color: $white;
+}
+
+.nuxt-link-exact-active {
+  padding-bottom: 5px;
+  border-bottom: 5px solid white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.email-link {
+  color: $blue;
+}
+
+button {
+  padding: 1.5rem;
+  background: $blue;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  @include scale-transition(1);
+  color: white;
+  border: 1px solid white;
+
+  &:hover,
+  &:focus {
+    @include scale-transition();
+    cursor: pointer;
+  }
+}
+
+input {
+  @include textInputStyle();
+
+  &:focus {
+    @include scale-transition();
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+textarea {
+  @include textInputStyle();
+
+  &:focus {
+    text-align: initial;
+    @include scale-transition();
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
