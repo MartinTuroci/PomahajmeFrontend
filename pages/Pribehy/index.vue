@@ -6,12 +6,12 @@
     </div>
     <section class="story-grid mt-5">
       <div v-for="(story, index) in stories" :key="index" class="story-item scale">
-        <div @click="goToDetail(story.id)">
+        <nuxt-link :to="'/pribehy/' + story.id">
           <div class="img-container">
             <img :src="`${imagesUrl}/${story.id}/${story.serializedImageLocations[0]}`" />
           </div>
           <h2 class="p-2">{{ story.title }}</h2>
-        </div>
+        </nuxt-link>
         <i v-if="isAuthenticated" class="fas fa-trash scale" @click="deleteStory(story.id, index)"></i>
       </div>
     </section>
