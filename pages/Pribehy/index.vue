@@ -5,11 +5,11 @@
       <hr />
     </div>
     <section class="mt-5 story-grid">
-      <div class="center-block" v-for="(story, index) in stories" :key="index">
+      <div class="center-block" v-for="(story, i) in stories" :key="i">
         <story-item
           :story="story"
           :isAuthenticated="isAuthenticated"
-          :deleteFunction="deleteStory"
+          @deleteAuctionItem="deleteAuctionItem(story.id)"
         ></story-item>
       </div>
     </section>

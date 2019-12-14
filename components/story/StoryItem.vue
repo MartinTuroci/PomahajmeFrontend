@@ -13,7 +13,7 @@
         <h2 class="text-black">{{ props.story.title }}</h2>
       </div>
     </nuxt-link>
-    <i v-if="isAuthenticated" class="p-2 fas fa-trash scale" @click="deleteFunction(props.story.id)"></i>
+    <i v-if="isAuthenticated" class="p-2 fas fa-trash scale" @click="parent.$emit('deleteAuctionItem')"></i>
   </div>
 </template>
 
@@ -26,10 +26,6 @@ export default {
     },
     isAuthenticated: {
       type: Boolean,
-      required: true,
-    },
-    deleteFunction: {
-      type: Function,
       required: true,
     },
   },

@@ -8,18 +8,18 @@
   </div>
 </template>
 <script>
-import Footer from "./../components/Footer";
-import Navigation from "./../components/Navigation";
+import Footer from '@/components/Footer';
+import Navigation from '@/components/Navigation';
 
 export default {
   components: {
     Footer,
-    Navigation
-  }
+    Navigation,
+  },
 };
 </script>
 <style lang="scss" scoped>
-@import "@/assets/sass/_variables.scss";
+@import '@/assets/sass/_variables';
 
 .mt-70px {
   margin-top: 70px;

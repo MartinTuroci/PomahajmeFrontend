@@ -21,7 +21,7 @@ export default {
   },
   head() {
     return {
-      title: `Príbeh ${this.story.id}`,
+      title: `Príbeh č. ${this.story.id}`,
       meta: [
         { hid: 'og:title', property: 'og:title', content: `${this.story.title}` },
         {
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/sass/_variables.scss';
+@import '@/assets/sass/_variables';
 
 .story-detail img {
   display: block;

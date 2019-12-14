@@ -1,12 +1,11 @@
 <template>
   <section class="m-3 auction-item-detail" v-if="auctionItem">
-    <!-- <img :src="`${imagesUrl}/${auctionItem.id}/${auctionItem.serializedImageLocations[0]}`" /> -->
     <h1 class="mt-3">{{ auctionItem.title }}</h1>
     <article v-html="auctionItem.largeText" class="mt-3"></article>
     <h2 class="mt-3">Obrázky</h2>
     <section class="mt-3 other-images">
       <div v-for="(imageUrl, index) in auctionItem.serializedImageLocations" :key="index">
-        <img :src="`${imagesUrl}/${auctionItem.id}/${imageUrl}`" />
+        <img :src="`${$URL.AUCTION.IMAGES_STORAGE}/${auctionItem.id}/${imageUrl}`" />
       </div>
     </section>
   </section>
@@ -14,19 +13,29 @@
 
 <script>
 import AuctionItemService from '@/services/auctionItemService';
-import URLS from '@/utils/urls';
 
 export default {
-  data() {
+  validate({ params: { id } }) {
+    return /^\d+$/.test(id);
+  },
+  head() {
     return {
-      auctionItem: null,
-      auctionItemService: new AuctionItemService(),
-      imagesUrl: URLS.AUCTION.IMAGES_STORAGE,
+      title: `Inzerát č. ${this.auctionItem.id}`,
+      meta: [
+        { hid: 'og:title', property: 'og:title', content: `${this.auctionItem.title}` },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `${this.$URL.AUCTION.IMAGES_STORAGE}/${this.auctionItem.id}/${this.auctionItem.serializedImageLocations[0]}`,
+        },
+      ],
     };
   },
-  async created() {
-    const res = await this.auctionItemService.getAuctionItem(this.$route.params.id);
-    this.auctionItem = res.data;
+  async asyncData(context) {
+    const { data } = await AuctionItemService.getAuctionItem(context.params.id);
+    return {
+      auctionItem: data,
+    };
   },
 };
 </script>
