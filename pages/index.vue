@@ -4,9 +4,6 @@
     <div class="quote-container">
       <div class="quote">
         <p>„Pomáhajme radi a hrdo.“</p>
-        <!-- <div class="text-right w-100">
-          <i>— Steve Jobs</i>
-        </div>-->
       </div>
       <button class="m-3 font-size-2" @click="smoothScroll">Chcem vedieť viac</button>
     </div>

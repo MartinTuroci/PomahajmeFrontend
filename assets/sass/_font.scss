@@ -1,40 +1,49 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-@import "variables.scss";
+@import 'variables.scss';
 
 html,
 body {
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 // headings
 h1 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 // font sizes
-
 .font-size-2 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .font-size-5 {
-    font-size: 5rem;
+  font-size: 5rem;
 }
 
 // text manipulation
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .text-right {
-    text-align: right;
+  text-align: right;
 }
 
 .text-justify {
-    text-align: justify;
+  text-align: justify;
 }
 
 // text colors
 .text-white {
-    color: $white;
+  color: $white;
+}
+.text-black {
+  color: $black;
+}
+.text-blue {
+  color: $blue;
+}
+
+.text-underline {
+  text-decoration: underline;
 }
