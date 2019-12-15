@@ -1,19 +1,12 @@
 <template>
-  <section class="m-3">
-    <div class="mt-5">
-      <h1>Príbehy</h1>
-      <hr />
-    </div>
-    <section class="mt-5 story-grid">
-      <div class="center-block" v-for="(story, i) in stories" :key="i">
-        <story-item
-          :story="story"
-          :isAuthenticated="isAuthenticated"
-          @deleteAuctionItem="deleteAuctionItem(story.id)"
-        ></story-item>
-      </div>
-    </section>
-    <Pagination :lastPage="lastPage" @pageChanged="loadNewPage"></Pagination>
+  <section class="p-5">
+    <base-header heading="Príbehy"></base-header>
+    <story-items
+      :stories="stories"
+      :isAuthenticated="isAuthenticated"
+      :deleteFunction="deleteStory"
+    ></story-items>
+    <pagination :lastPage="lastPage" @pageChanged="loadNewPage"></pagination>
   </section>
 </template>
 
@@ -21,7 +14,7 @@
 import StoryService from '@/services/storyService';
 import { mapGetters } from 'vuex';
 import Pagination from '@/components/Pagination';
-import StoryItem from '@/components/story/StoryItem';
+import StoryItems from '@/components/story/StoryItems';
 
 export default {
   async asyncData(context) {
@@ -36,7 +29,7 @@ export default {
       lastPage: last_page,
     };
   },
-  components: { Pagination, StoryItem },
+  components: { Pagination, StoryItems },
   computed: {
     ...mapGetters({ isAuthenticated: 'auth/isAuthenticated' }),
   },
@@ -58,12 +51,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.story-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 50px 50px;
-  justify-items: center;
-}
-</style>

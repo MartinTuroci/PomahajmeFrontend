@@ -69,7 +69,7 @@ let config = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/urls'],
+  plugins: ['@/plugins/urls', '@/plugins/global'],
   /*
    ** Nuxt.js dev-modules
    */

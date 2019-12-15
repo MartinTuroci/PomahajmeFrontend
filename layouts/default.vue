@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navigation></Navigation>
-    <main :class="$nuxt.$route.path !== `/` ? 'mt-70px' : ''" class="main-content">
+    <main :class="{'mt-70px': $nuxt.$route.path !== `/`}" class="main-content">
       <nuxt />
     </main>
     <Footer></Footer>

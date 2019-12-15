@@ -1,7 +1,6 @@
 <template functional>
   <section class="p-5">
-    <h1>O nás</h1>
-    <hr />
+    <base-header heading="O nás"></base-header>
     <article class="mt-3">
       <p>
         Sme mladý tím ľudí, ktorí sa rozhodli, že vo svojom voľnom čase budú

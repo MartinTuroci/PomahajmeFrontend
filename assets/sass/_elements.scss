@@ -15,10 +15,22 @@
   @include scale-transition(1);
 }
 
+@mixin activeLink {
+  padding-bottom: 5px;
+  border-bottom: 5px solid white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 a {
   color: $blue;
   text-decoration: none;
   width: fit-content;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }
 
 button a {
@@ -26,14 +38,7 @@ button a {
 }
 
 .nuxt-link-exact-active {
-  padding-bottom: 5px;
-  border-bottom: 5px solid white;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.email-link {
-  color: $blue;
+  @include activeLink;
 }
 
 button {

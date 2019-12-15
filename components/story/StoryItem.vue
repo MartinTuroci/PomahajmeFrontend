@@ -13,7 +13,7 @@
         <h2 class="text-black">{{ props.story.title }}</h2>
       </div>
     </nuxt-link>
-    <i v-if="isAuthenticated" class="p-2 fas fa-trash scale" @click="parent.$emit('deleteAuctionItem')"></i>
+    <i v-if="isAuthenticated" class="p-2 fas fa-trash scale" @click="parent.$emit('deleteStory')"></i>
   </div>
 </template>
 

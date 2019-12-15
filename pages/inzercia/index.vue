@@ -1,18 +1,12 @@
 <template>
   <section class="p-5">
-    <h1>Inzercia</h1>
-    <hr class="mb-2" />
-    <div>
-      <div v-for="(auctionItem, i) in auctionItems" :key="i">
-        <AuctionItem
-          :auctionItem="auctionItem"
-          :isAuthenticated="isAuthenticated"
-          @deleteAuctionItem="deleteAuctionItem(auctionItem.id)"
-        ></AuctionItem>
-        <hr v-if="i !== auctionItems.length - 1" class="mt-2 mb-2" />
-      </div>
-      <Pagination :lastPage="lastPage" @pageChanged="loadNewPage"></Pagination>
-    </div>
+    <base-header heading="Inzercia"></base-header>
+    <auction-items
+      :auctionItems="auctionItems"
+      :isAuthenticated="isAuthenticated"
+      :deleteFunction="deleteAuctionItem"
+    ></auction-items>
+    <pagination :lastPage="lastPage" @pageChanged="loadNewPage"></pagination>
   </section>
 </template>
 
@@ -20,7 +14,7 @@
 import { mapGetters } from 'vuex';
 import Pagination from '@/components/Pagination';
 import AuctionItemService from '@/services/auctionItemService';
-import AuctionItem from '@/components/auction/AuctionItem';
+import AuctionItems from '@/components/auction/AuctionItems';
 
 export default {
   async asyncData(context) {
@@ -36,7 +30,7 @@ export default {
       lastPage: last_page,
     };
   },
-  components: { Pagination, AuctionItem },
+  components: { Pagination, AuctionItems },
   computed: {
     ...mapGetters({ isAuthenticated: 'auth/isAuthenticated' }),
   },
