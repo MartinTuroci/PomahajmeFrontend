@@ -1,4 +1,5 @@
 import devConfig from './nuxt.config.dev';
+import httpClient from './services/httpClient';
 
 let config = {
   mode: 'universal',
@@ -78,6 +79,18 @@ let config = {
    ** Nuxt.js modules
    */
   modules: ['@nuxtjs/proxy'],
+  generate: {
+    async routes() {
+      const ids = await Promise.all([httpClient.get(`api/story/ids`), httpClient.get(`api/auction/ids`)]);
+
+      if (ids.length !== 2) throw new Error('Incorrect number of responses.');
+
+      const storyRoutes = ids[0].data.map(storyId => `pribehy/${storyId}`);
+      const auctionRoutes = ids[1].data.map(auctionId => `inzercia/${auctionId}`);
+
+      return [...storyRoutes, ...auctionRoutes];
+    },
+  },
   /*
    ** Build configuration
    */
