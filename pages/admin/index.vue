@@ -4,9 +4,6 @@
       <div class="admin-nav p-2">
         <a @click="currentAdminComponent = 'AddStory'">Pridať príbeh</a>
         <a @click="currentAdminComponent = 'AddAuctionItem'">Pridať inzerát</a>
-        <!-- <router-link :to="{name: 'StoryItemsAdmin'}">Príbehy</router-link>
-        <router-link :to="{name: 'AddAuctionItemAdmin'}">Pridať inzerát</router-link>
-        <router-link :to="{name: 'AuctionItemsAdmin'}">Inzeráty</router-link>-->
         <a @click="logout">Odhlásiť sa</a>
       </div>
       <div class="admin-body">
