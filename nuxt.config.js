@@ -81,8 +81,9 @@ let config = {
   modules: ['@nuxtjs/proxy'],
   generate: {
     async routes() {
-      const ids = await Promise.all([axios.get(`api/story/ids`), axios.get(`api/auction/ids`)]);
+      axios.defaults.baseURL = 'http://pomahajme.sk';
 
+      const ids = await Promise.all([axios.get(`/api/story/ids`), axios.get(`/api/auction/ids`)]);
       if (ids.length !== 2) throw new Error('Incorrect number of responses.');
 
       const storyRoutes = ids[0].data.map(storyId => `pribehy/${storyId}`);
