@@ -1,8 +1,11 @@
+pwd
+
 # Install ncftp
 sudo apt-get install ncftp
 
 # Upload new version
 ncftpput -R -v -u $USER -p $PASSWORD \
+-W "cd .." \
 -W "mkdir tmpDir" \
 -W "rename www/images tmpDir/images" \
 -W "rename www/auctionImages tmpDir/auctionImages" \
@@ -21,4 +24,4 @@ ncftpput -R -v -u $USER -p $PASSWORD \
 -W "rename tmpDir/subdom www/subdom" \
 -W "rename tmpDir/domains www/domains" \
 -W "rmdir tmpDir" \
-$HOST /www /dist/.
+$HOST /www ./dist/.
