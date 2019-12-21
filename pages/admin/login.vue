@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 import AuthService from '@/services/authService';
 
 export default {
@@ -24,20 +23,14 @@ export default {
       },
     };
   },
-  computed: {
-    ...mapGetters({ isAuthenticated: 'auth/isAuthenticated' }),
-  },
   methods: {
     async login() {
       const {
         data: { access_token },
       } = await AuthService.login(this.credentials);
-      //   this.updateLocalStorage(access_token);
+
+      await this.$store.dispatch('auth/login', access_token);
       this.$router.push({ path: '/admin' });
-    },
-    updateLocalStorage(token, expiresIn) {
-      localStorage.removeItem('user-token');
-      localStorage.setItem('user-token', token);
     },
   },
 };
