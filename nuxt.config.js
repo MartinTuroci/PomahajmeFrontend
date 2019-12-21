@@ -82,6 +82,7 @@ let config = {
   generate: {
     async routes() {
       axios.defaults.baseURL = 'http://pomahajme.sk';
+      axios.defaults.timeout = 10000;
 
       const ids = await Promise.all([axios.get(`/api/story/ids`), axios.get(`/api/auction/ids`)]);
       if (ids.length !== 2) throw new Error('Incorrect number of responses.');
