@@ -5,7 +5,6 @@ sudo apt-get install ncftp
 
 # Upload new version
 ncftpput -R -v -u $USER -p $PASSWORD \
--W "cd .." \
 -W "mkdir tmpDir" \
 -W "rename www/images tmpDir/images" \
 -W "rename www/auctionImages tmpDir/auctionImages" \
