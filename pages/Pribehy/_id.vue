@@ -31,7 +31,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: `${this.$URL.STORY.IMAGES_STORAGE}/${this.story.id}/${this.story.serializedImageLocations[0]}`,
+          content: `http://pomahajme.sk/images/${this.story.id}/${this.story.serializedImageLocations[0]}`,
         },
       ],
     };
