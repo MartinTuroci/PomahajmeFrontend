@@ -1,11 +1,11 @@
 <template>
   <div class="mt-5">
     <div class="center-block" v-for="(auctionItem, i) in auctionItems" :key="i">
-      <AuctionItem
+      <auction-item
         :auctionItem="auctionItem"
         :isAuthenticated="isAuthenticated"
-        @deleteStory="deleteFunction(auctionItem.id)"
-      ></AuctionItem>
+        @deleteAuctionItem="deleteFunction"
+      ></auction-item>
       <hr v-if="i !== auctionItems.length - 1" class="mt-2 mb-2" />
     </div>
   </div>

@@ -9,14 +9,14 @@
       <h3>{{ props.auctionItem.title }}</h3>
       <p v-html="props.auctionItem.largeText.substring(0, 100).replace(/<br\/>/g, '') + '...'"></p>
     </div>
+    <i
+      v-if="props.isAuthenticated"
+      class="fas danger fa-trash scale font-size-2 ml-1"
+      @click="listeners['deleteAuctionItem'](props.auctionItem.id)"
+    ></i>
     <nuxt-link :to="`/inzercia/${props.auctionItem.id}`">
       <button>Detail</button>
     </nuxt-link>
-    <i
-      v-if="props.isAuthenticated"
-      class="fas fa-trash scale font-size-2 ml-1"
-      @click="parent.$emit('deleteAuctionItem')"
-    ></i>
   </div>
 </template>
 

@@ -3,7 +3,7 @@
     <base-header heading="Inzercia"></base-header>
     <auction-items
       :auctionItems="auctionItems"
-      :isAuthenticated="isAuthenticated"
+      :isAuthenticated="$store.getters['auth/isAuthenticated']"
       :deleteFunction="deleteAuctionItem"
     ></auction-items>
     <pagination :lastPage="lastPage" @pageChanged="loadNewPage"></pagination>
@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 import Pagination from '@/components/Pagination';
 import AuctionItemService from '@/services/auctionItemService';
 import AuctionItems from '@/components/auction/AuctionItems';
@@ -31,9 +30,6 @@ export default {
     };
   },
   components: { Pagination, AuctionItems },
-  computed: {
-    ...mapGetters({ isAuthenticated: 'auth/isAuthenticated' }),
-  },
   methods: {
     async deleteAuctionItem(id) {
       await AuctionItemService.deleteAuctionItem(id);

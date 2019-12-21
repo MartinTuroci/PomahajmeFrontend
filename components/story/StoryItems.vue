@@ -1,14 +1,8 @@
 <template>
-  <div>
-    <section class="mt-5 story-grid">
-      <div class="center-block" v-for="(story, i) in stories" :key="i">
-        <StoryItem
-          :story="story"
-          :isAuthenticated="isAuthenticated"
-          @deleteStory="deleteFunction(story.id)"
-        ></StoryItem>
-      </div>
-    </section>
+  <div class="mt-5 story-grid">
+    <div class="center-block" v-for="(story, i) in stories" :key="i">
+      <story-item :story="story" :isAuthenticated="isAuthenticated" @deleteStory="deleteFunction"></story-item>
+    </div>
   </div>
 </template>
 
@@ -16,6 +10,7 @@
 import StoryItem from '@/components/story/StoryItem';
 
 export default {
+  components: { StoryItem },
   props: {
     stories: {
       type: Array,
@@ -30,7 +25,6 @@ export default {
       required: true,
     },
   },
-  components: { StoryItem },
 };
 </script>
 

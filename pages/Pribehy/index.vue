@@ -3,7 +3,7 @@
     <base-header heading="Príbehy"></base-header>
     <story-items
       :stories="stories"
-      :isAuthenticated="isAuthenticated"
+      :isAuthenticated="$store.getters['auth/isAuthenticated']"
       :deleteFunction="deleteStory"
     ></story-items>
     <pagination :lastPage="lastPage" @pageChanged="loadNewPage"></pagination>
@@ -12,7 +12,6 @@
 
 <script>
 import StoryService from '@/services/storyService';
-import { mapGetters } from 'vuex';
 import Pagination from '@/components/Pagination';
 import StoryItems from '@/components/story/StoryItems';
 
@@ -30,9 +29,6 @@ export default {
     };
   },
   components: { Pagination, StoryItems },
-  computed: {
-    ...mapGetters({ isAuthenticated: 'auth/isAuthenticated' }),
-  },
   methods: {
     async deleteStory(id) {
       await StoryService.deleteStory(id);
