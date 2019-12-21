@@ -1,5 +1,5 @@
 import devConfig from './nuxt.config.dev';
-import httpClient from './services/httpClient';
+import axios from 'axios';
 
 let config = {
   mode: 'universal',
@@ -81,7 +81,7 @@ let config = {
   modules: ['@nuxtjs/proxy'],
   generate: {
     async routes() {
-      const ids = await Promise.all([httpClient.get(`api/story/ids`), httpClient.get(`api/auction/ids`)]);
+      const ids = await Promise.all([axios.get(`api/story/ids`), axios.get(`api/auction/ids`)]);
 
       if (ids.length !== 2) throw new Error('Incorrect number of responses.');
 

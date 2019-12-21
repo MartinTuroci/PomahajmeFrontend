@@ -1,30 +1,16 @@
-import Headers from './headers';
-import httpClient from './httpClient';
+import axios from 'axios';
 import urls from '@/utils/urls';
 
 class AuthService {
   login(credentials) {
-    return httpClient.post(urls.AUTH.LOGIN, credentials, new Headers().addJsonContentType().return());
+    return axios.post(urls.AUTH.LOGIN, credentials);
   }
-  refresh() {
-    return httpClient.post(
-      urls.AUTH.REFRESH_TOKEN,
-      {
-        name: 'name',
-        password: 'pass',
-      },
-      new Headers().addAuthToken().return()
-    );
-  }
+
   logout() {
-    return httpClient.post(
-      urls.AUTH.LOGOUT,
-      {
-        name: 'name',
-        password: 'pass',
-      },
-      new Headers().addJsonContentType().return()
-    );
+    return axios.post(urls.AUTH.LOGOUT, {
+      name: '',
+      password: '',
+    });
   }
 }
 export default new AuthService();
