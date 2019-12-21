@@ -24,6 +24,10 @@ export default {
       title: `Príbeh č. ${this.story.id}`,
       meta: [
         { hid: 'og:title', property: 'og:title', content: `${this.story.title}` },
+        { hid: 'title', property: 'title', content: `${this.story.title}` },
+        { hid: 'description', property: 'description', content: `${this.story.largeText}` },
+        { hid: 'og:description', property: 'og:description', content: `${this.story.largeText}` },
+        { hid: 'og:url', property: 'og:url', content: `http://pomahajme.sk/pribehy/${this.story.id}` },
         {
           hid: 'og:image',
           property: 'og:image',
