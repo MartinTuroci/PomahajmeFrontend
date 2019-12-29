@@ -74,7 +74,10 @@ let config = {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: ['@nuxtjs/google-analytics'],
+  googleAnalytics: {
+    id: 'UA-151593080-1',
+  },
   /*
    ** Nuxt.js modules
    */
