@@ -29,23 +29,11 @@
           <p>Pretože deti sú naša budúcnosť.</p>
         </article>
       </div>
+      <section class="text-center">
+        <h2>Podporujeme aj:</h2>
+        <img src="@/assets/images/risko_alexej_alex_amelia.jpg" alt="Risko Alexej Alex Amelia" />
+      </section>
       <h1 class="mb-5">Spoločne vytvorme pre naše deti lepšiu budúcnosť</h1>
-      <!-- <article class="text-center p-5">
-        <h1 class="text-center">O nás</h1>Ahojte priatelia,
-        sme zatiaľ facebooková komunita ľudí ktorá chce pomáhať tým ktorý to najviac
-        potrebujú. Chceme pomáhať našim najmenším, teda detičkám ktoré to
-        potrebujú a ktorých rodičia finančne nezvládajú rôzne liečby, rehabilitácie
-        a pod.
-        Sme tu preto lebo chceme a budeme pomáhať, chceme každému ukázať že
-        medzi nami sú aj ľudia ktorý potrebujú pomoc, ľudia ktorým štát ,,nevie,
-        nechce´´ pomôcť a preto ak sa chceš pridať k nám tak si prezri naše výzvy
-        a vyber si komu pomôžeš práve ty. Ak chceš pomôcť nám ako organizácii pri
-        rozvoji stránky alebo inak, napíš nám na FB alebo na E-mail budeme vďačný.
-        Sme toho názoru že aj jediné Euríčko pomôže a dokonca môže zachrániť alebo
-        zmeniť niekomu život, lebo keď sa spojí napríklad 1000 ľudí pre každého je to
-        len jedno Euro, ale do kopy to môže byť obrovská čiastka ktorá určite pomôže.
-        Ak si o nás nikdy nepočul alebo nepočula tak nás nájdeš aj na FB:
-      </article>-->
     </section>
     <section ref="howToStart" class="how-to-start w-100">
       <h1 class="text-center p-5">Ako začať?</h1>
