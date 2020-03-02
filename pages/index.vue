@@ -29,8 +29,8 @@
           <p>Pretože deti sú naša budúcnosť.</p>
         </article>
       </div>
-      <section class="text-center">
-        <h2>Podporujeme aj:</h2>
+      <section class="text-center we-support-section">
+        <h1>Podporujeme aj</h1>
         <img src="@/assets/images/risko_alexej_alex_amelia.jpg" alt="Risko Alexej Alex Amelia" />
       </section>
       <h1 class="mb-5">Spoločne vytvorme pre naše deti lepšiu budúcnosť</h1>
@@ -176,6 +176,12 @@ export default {
 .how-to-start article:nth-child(odd) {
   @media only screen and (max-width: 500px) {
     flex-direction: column-reverse;
+  }
+}
+.we-support-section {
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 article img {
