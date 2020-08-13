@@ -9,12 +9,8 @@
     <section class="disp-flex flex-space-evenly text-center">
       <div>
         <h3 class="p-2">Kontakty:</h3>
-        <p>
-          <i class="fas fa-envelope"></i> info@pomahajme.sk
-        </p>
-        <p>
-          <i class="fas fa-phone"></i> +421944123539
-        </p>
+        <p><i class="fas fa-envelope"></i> info@pomahajme.sk</p>
+        <p><i class="fas fa-phone"></i> 0949 01 22 02</p>
       </div>
       <div>
         <h3 class="p-2">Sponzori:</h3>
