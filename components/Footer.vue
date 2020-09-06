@@ -19,15 +19,15 @@
   </footer>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '@/assets/sass/_variables';
 
-a {
-  color: $white;
-}
 .footer {
   background-color: $blue;
   color: $white;
   min-height: $footer-height;
+  a {
+    color: $white;
+  }
 }
 </style>

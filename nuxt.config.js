@@ -70,7 +70,7 @@ let config = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/urls', '@/plugins/global'],
+  plugins: ['@/plugins/urls', '@/plugins/global', '@/plugins/vue-editor.client.js'],
   /*
    ** Nuxt.js dev-modules
    */

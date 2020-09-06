@@ -22,6 +22,9 @@
       <nuxt-link to="/inzercia">
         <span @click="hideMobileSideNav">Inzercia</span>
       </nuxt-link>
+      <nuxt-link to="/rubrika">
+        <span @click="hideMobileSideNav">Rubrika</span>
+      </nuxt-link>
     </div>
   </nav>
 </template>

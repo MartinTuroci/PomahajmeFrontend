@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navigation></Navigation>
-    <main :class="{'mt-70px': $nuxt.$route.path !== `/`}" class="main-content">
+    <main :class="{ 'mt-70px': $nuxt.$route.path !== `/` }" class="main-content">
       <nuxt />
     </main>
     <Footer></Footer>
@@ -26,5 +26,6 @@ export default {
 }
 .main-content {
   min-height: calc(100vh - #{$nav-height} - #{$footer-height});
+  box-sizing: border-box;
 }
 </style>

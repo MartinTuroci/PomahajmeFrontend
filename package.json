@@ -1,7 +1,7 @@
 {
-  "name": "Pomahajme",
+  "name": "pomahajme",
   "version": "1.0.0",
-  "description": "Pomahajme.sk frontend",
+  "description": "pomahajme.sk frontend",
   "author": "Martin Turoci",
   "private": true,
   "scripts": {
@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "nuxt": "^2.11.0"
+    "nuxt": "^2.11.0",
+    "vueditor": "^0.3.1"
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.2.2",

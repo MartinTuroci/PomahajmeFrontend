@@ -1,6 +1,7 @@
 const AUTH_URL = `/api/auth`;
 const STORY_URL = `/api/story`;
 const AUCTION_URL = `/api/auction`;
+const TIP_URL = `/api/tip`;
 const BASE_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'http://pomahajme.sk';
 
 export default {
@@ -21,5 +22,11 @@ export default {
     LIST: `${AUCTION_URL}/list`,
     IMAGES_UPLOAD: `${AUCTION_URL}/uploadImages`,
     IMAGES_STORAGE: `/auctionImages`,
+  },
+  TIP: {
+    TIP_URL: `${TIP_URL}`,
+    LIST: `${TIP_URL}/list`,
+    UNAPPROVED: `${TIP_URL}/unapproved`,
+    APPROVE: `${TIP_URL}/approve`,
   },
 };

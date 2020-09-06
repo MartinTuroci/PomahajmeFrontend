@@ -52,7 +52,7 @@ export default {
   padding: 1rem;
 }
 .pagination-container input {
-  width: 25px;
+  width: 50px;
 }
 .pagination-container i {
   &:hover {

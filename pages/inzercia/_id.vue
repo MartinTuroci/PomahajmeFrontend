@@ -1,7 +1,6 @@
 <template>
   <section class="m-3 auction-item-detail" v-if="auctionItem">
-    <h1 class="mt-3">{{ auctionItem.title }}</h1>
-    <article v-html="auctionItem.largeText" class="mt-3"></article>
+    <base-text-display :title="auctionItem.title.title" :text="auctionItem.title.largeText" />
     <h2 class="mt-3">Obrázky</h2>
     <section class="mt-3 other-images">
       <div v-for="(imageUrl, index) in auctionItem.serializedImageLocations" :key="index">
@@ -13,8 +12,12 @@
 
 <script>
 import AuctionItemService from '@/services/auctionItemService';
+import BaseTextDisplay from '@/components/BaseTextDisplay';
 
 export default {
+  components: {
+    BaseTextDisplay,
+  },
   validate({ params: { id } }) {
     return /^\d+$/.test(id);
   },
@@ -41,18 +44,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/sass/_variables';
-
-.auction-item-detail h1 {
-  text-align: center;
-}
-.auction-item-detail {
-  text-align: justify;
-  word-wrap: break-word;
-}
-.auction-item-detail article {
-  line-height: $line-height-base;
-}
 .auction-item-detail img {
   width: 100%;
 }
