@@ -1,8 +1,13 @@
 <template>
   <div class="mt-5 story-grid">
-    <div class="center-block" v-for="(story, i) in stories" :key="i">
-      <story-item :story="story" :isAuthenticated="isAuthenticated" @deleteStory="deleteFunction"></story-item>
-    </div>
+    <story-item
+      v-for="(story, i) in stories"
+      :key="i"
+      :story="story"
+      :isAuthenticated="isAuthenticated"
+      @deleteStory="deleteFunction"
+      @updateStory="updateFunction"
+    ></story-item>
   </div>
 </template>
 
@@ -21,6 +26,10 @@ export default {
       required: true,
     },
     deleteFunction: {
+      type: Function,
+      required: true,
+    },
+    updateFunction: {
       type: Function,
       required: true,
     },

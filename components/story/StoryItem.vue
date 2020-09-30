@@ -13,11 +13,18 @@
         <h2 class="text-black">{{ props.story.title }}</h2>
       </div>
     </nuxt-link>
-    <i
-      v-if="props.isAuthenticated"
-      class="p-1 danger fas fa-trash scale"
-      @click="listeners['deleteStory'](props.story.id)"
-    ></i>
+    <section class="toolbar disp-flex flex-space-evenly">
+      <i
+        v-if="props.isAuthenticated"
+        class="p-1 danger fas fa-trash scale"
+        @click="listeners['deleteStory'](props.story.id)"
+      ></i>
+      <i
+        v-if="true"
+        class="p-1 danger fas fa-trash scale"
+        @click="listeners['updateStory'](props.story.id)"
+      ></i>
+    </section>
   </div>
 </template>
 
@@ -37,6 +44,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.toolbar {
+  i {
+    font-size: 25px;
+  }
+}
 .story-item {
   cursor: pointer;
   border-radius: 25px;

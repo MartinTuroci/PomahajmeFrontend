@@ -5,6 +5,7 @@
       :stories="stories"
       :isAuthenticated="$store.getters['auth/isAuthenticated']"
       :deleteFunction="deleteStory"
+      :updateFunction="updateStory"
     ></story-items>
     <pagination :lastPage="lastPage" @pageChanged="loadNewPage"></pagination>
   </section>
@@ -32,6 +33,10 @@ export default {
   methods: {
     async deleteStory(id) {
       await StoryService.deleteStory(id);
+      await this.loadNewPage(this.page);
+    },
+    async updateStory(id) {
+      await StoryService.updateStory(id);
       await this.loadNewPage(this.page);
     },
     async loadNewPage(page) {
