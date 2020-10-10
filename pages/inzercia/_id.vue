@@ -1,6 +1,6 @@
 <template>
   <section class="m-3 auction-item-detail" v-if="auctionItem">
-    <base-text-display :title="auctionItem.title" :text="auctionItem.title" />
+    <base-text-display :title="auctionItem.title" :text="auctionItem.largeText" />
     <h2 class="mt-3">Obrázky</h2>
     <section class="mt-3 other-images">
       <div v-for="(imageUrl, index) in auctionItem.serializedImageLocations" :key="index">
