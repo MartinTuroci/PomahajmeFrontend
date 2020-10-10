@@ -1,6 +1,6 @@
 <template>
   <section class="m-3 auction-item-detail" v-if="auctionItem">
-    <base-text-display :title="auctionItem.title.title" :text="auctionItem.title.largeText" />
+    <base-text-display :title="auctionItem.title" :text="auctionItem.title" />
     <h2 class="mt-3">Obrázky</h2>
     <section class="mt-3 other-images">
       <div v-for="(imageUrl, index) in auctionItem.serializedImageLocations" :key="index">
@@ -36,6 +36,7 @@ export default {
   },
   async asyncData(context) {
     const { data } = await AuctionItemService.getAuctionItem(context.params.id);
+    console.log(data);
     return {
       auctionItem: data,
     };
