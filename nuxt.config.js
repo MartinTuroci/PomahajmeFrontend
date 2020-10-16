@@ -87,11 +87,9 @@ let config = {
       axios.defaults.baseURL = 'http://pomahajme.sk';
       axios.defaults.timeout = 10000;
 
-      const ids = await Promise.all([axios.get(`/api/story/ids`), axios.get(`/api/auction/ids`)]);
-      if (ids.length !== 2) throw new Error('Incorrect number of responses.');
-
-      const storyRoutes = ids[0].data.map(storyId => `pribehy/${storyId}`);
-      const auctionRoutes = ids[1].data.map(auctionId => `inzercia/${auctionId}`);
+      const [storyIds, auctionIds] = await Promise.all([axios.get(`/api/story/ids`), axios.get(`/api/auction/ids`)]);
+      const storyRoutes = storyIds.data.map(storyId => `pribehy/${storyId}`);
+      const auctionRoutes = auctionIds.data.map(auctionId => `inzercia/${auctionId}`);
 
       return [...storyRoutes, ...auctionRoutes];
     },
