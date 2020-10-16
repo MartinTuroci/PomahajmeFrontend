@@ -1,6 +1,6 @@
 <template functional>
   <div class="story-item text-center scale">
-    <nuxt-link :to="`/pribeh/${props.story.id}`">
+    <nuxt-link :to="`/pribehy/${props.story.id}`">
       <div class="img-container flex-center">
         <img
           class="w-100"
@@ -19,11 +19,7 @@
         class="p-1 danger fas fa-trash scale"
         @click="listeners['deleteStory'](props.story.id)"
       ></i>
-      <i
-        v-if="true"
-        class="p-1 danger fas fa-trash scale"
-        @click="listeners['updateStory'](props.story.id)"
-      ></i>
+      <i v-if="true" class="p-1 text-blue fas fa-pen scale" @click="listeners['updateStory'](props.story)"></i>
     </section>
   </div>
 </template>
