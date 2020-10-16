@@ -1,6 +1,6 @@
 <template functional>
   <div class="story-item text-center scale">
-    <nuxt-link :to="`/pribehy/${props.story.id}`">
+    <nuxt-link :to="`/pribeh/${props.story.id}`">
       <div class="img-container flex-center">
         <img
           class="w-100"
