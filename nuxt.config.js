@@ -83,9 +83,10 @@ let config = {
    */
   modules: ['@nuxtjs/proxy'],
   generate: {
+    interval: 200,
     async routes() {
       axios.defaults.baseURL = 'http://pomahajme.sk';
-      axios.defaults.timeout = 100000;
+      axios.defaults.timeout = 10000;
 
       const [storyIds, auctionIds] = await Promise.all([axios.get(`/api/story/ids`), axios.get(`/api/auction/ids`)]);
       const storyRoutes = storyIds.data.map(storyId => `pribehy/${storyId}`);
