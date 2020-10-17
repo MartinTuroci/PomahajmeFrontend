@@ -85,6 +85,7 @@ let config = {
   generate: {
     async routes() {
       axios.defaults.baseURL = 'http://pomahajme.sk';
+      axios.defaults.timeout = 100000;
 
       const [storyIds, auctionIds] = await Promise.all([axios.get(`/api/story/ids`), axios.get(`/api/auction/ids`)]);
       const storyRoutes = storyIds.data.map(storyId => `pribehy/${storyId}`);
