@@ -17,9 +17,13 @@
       <i
         v-if="props.isAuthenticated"
         class="p-1 danger fas fa-trash scale"
-        @click="listeners['deleteStory'](props.story.id)"
+        @click="listeners.deleteStory(props.story.id)"
       ></i>
-      <i v-if="props.isAuthenticated" class="p-1 text-blue fas fa-pen scale" @click="listeners['updateStory'](props.story)"></i>
+      <i
+        v-if="props.isAuthenticated"
+        class="p-1 text-blue fas fa-pen scale"
+        @click="listeners.updateStory(props.story)"
+      ></i>
     </section>
   </div>
 </template>

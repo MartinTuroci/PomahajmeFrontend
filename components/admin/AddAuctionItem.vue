@@ -24,6 +24,7 @@ export default {
   methods: {
     filesChanged(files) {
       this.AuctionItem.images = files;
+      // TODO: Refactor to do the joining on server side.
       this.AuctionItem.serializedImageLocations = files.map(file => file.name).join('|');
     },
     async storeAuctionItem() {

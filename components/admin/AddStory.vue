@@ -24,6 +24,7 @@ export default {
   methods: {
     filesChanged(files) {
       this.story.images = files;
+      // TODO: Refactor to do the joining on server side.
       this.story.serializedImageLocations = files.map(file => file.name).join('|');
     },
     async storeStory() {
