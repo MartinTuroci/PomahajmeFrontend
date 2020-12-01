@@ -93,12 +93,12 @@ let config = {
         axios.get(`/api/tip/ids`),
       ]);
 
-      const storyRoutes = stories.data.map(story => ({ route: `pribehy/${story.id}`, payload: story }));
-      const auctionRoutes = auctionItems.data.map(auction => ({
+      const storyRoutes = stories.data.data.map(story => ({ route: `pribehy/${story.id}`, payload: story }));
+      const auctionRoutes = auctionItems.data.data.map(auction => ({
         route: `inzercia/${auction.id}`,
         payload: auction,
       }));
-      const tipRoutes = tips.data.map(tip => ({ route: `rubrika/${tip.id}`, payload: tip }));
+      const tipRoutes = tips.data.data.map(tip => ({ route: `rubrika/${tip.id}`, payload: tip }));
 
       return [...storyRoutes, ...auctionRoutes, ...tipRoutes];
     },
