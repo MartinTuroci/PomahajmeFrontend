@@ -86,13 +86,21 @@ let config = {
     interval: 200,
     async routes() {
       axios.defaults.baseURL = 'http://pomahajme.sk';
-      axios.defaults.timeout = 10000;
 
-      const [storyIds, auctionIds] = await Promise.all([axios.get(`/api/story/ids`), axios.get(`/api/auction/ids`)]);
-      const storyRoutes = storyIds.data.map(storyId => `pribehy/${storyId}`);
-      const auctionRoutes = auctionIds.data.map(auctionId => `inzercia/${auctionId}`);
+      const [stories, auctionItems, tips] = await Promise.all([
+        axios.get(`/api/story/ids`),
+        axios.get(`/api/auction/ids`),
+        axios.get(`/api/tip/ids`),
+      ]);
 
-      return [...storyRoutes, ...auctionRoutes];
+      const storyRoutes = stories.data.map(story => ({ route: `pribehy/${story.id}`, payload: story }));
+      const auctionRoutes = auctionItems.data.map(auction => ({
+        route: `inzercia/${auction.id}`,
+        payload: auction,
+      }));
+      const tipRoutes = tips.data.map(tip => ({ route: `rubrika/${tip.id}`, payload: tip }));
+
+      return [...storyRoutes, ...auctionRoutes, ...tipRoutes];
     },
   },
   /*

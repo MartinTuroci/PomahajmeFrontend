@@ -21,11 +21,10 @@ export default {
       meta: [{ hid: 'og:title', property: 'og:title', content: `${this.tip.title}` }],
     };
   },
-  async asyncData(context) {
-    const { data } = await TipService.getTip(context.params.id);
-    return {
-      tip: data,
-    };
+  async asyncData({ params, payload }) {
+    if (payload) return { tip: payload };
+    const { data } = await TipService.getTip(params.id);
+    return { tip: data };
   },
 };
 </script>

@@ -34,12 +34,10 @@ export default {
       ],
     };
   },
-  async asyncData(context) {
-    const { data } = await AuctionItemService.getAuctionItem(context.params.id);
-    console.log(data);
-    return {
-      auctionItem: data,
-    };
+  async asyncData({ params, payload }) {
+    if (payload) return { auctionItem: payload };
+    const { data } = await AuctionItemService.getAuctionItem(params.id);
+    return { auctionItem: data };
   },
 };
 </script>

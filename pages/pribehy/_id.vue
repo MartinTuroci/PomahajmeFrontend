@@ -39,8 +39,9 @@ export default {
       ],
     };
   },
-  async asyncData({ params: { id } }) {
-    const { data } = await StoryService.getStory(id);
+  async asyncData({ params, payload }) {
+    if (payload) return { story: payload };
+    const { data } = await StoryService.getStory(params.id);
     return { story: data };
   },
 };
