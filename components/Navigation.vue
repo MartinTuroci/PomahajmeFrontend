@@ -25,6 +25,9 @@
       <nuxt-link to="/rubrika">
         <span @click="hideMobileSideNav">Rubrika</span>
       </nuxt-link>
+      <nuxt-link to="/kontakt">
+        <span @click="hideMobileSideNav">Kontakt</span>
+      </nuxt-link>
     </div>
   </nav>
 </template>
