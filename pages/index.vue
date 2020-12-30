@@ -3,6 +3,7 @@
     <div class="landing-img" alt></div>
     <div class="quote-container">
       <div class="quote">
+        <h3>OZ Podaj Pomoc</h3>
         <p>„Pomáhajme radi a hrdo.“</p>
       </div>
       <button class="m-3 font-size-2" @click="smoothScroll">Chcem vedieť viac</button>
