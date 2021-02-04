@@ -14,6 +14,10 @@
       </div>
       <div>
         <h3 class="p-2">Sponzori:</h3>
+        <a href="https://delfinoterapiask.eu/">
+          <img src="@/assets/images/delfinoterapia.png" alt="delfinoterapia" />
+          <p>Delfínoterapia SK</p>
+        </a>
       </div>
     </section>
   </footer>
