@@ -6,14 +6,15 @@
         <i class="fab fa-facebook-square"></i>
       </a>
     </section>
-    <section class="disp-flex flex-space-evenly text-center">
+    <section class="disp-flex flex-space-evenly">
       <div>
-        <h3 class="p-2">Kontakty:</h3>
+        <h3 class="p-2 text-center">Kontakty:</h3>
         <p><i class="fas fa-envelope"></i> info@pomahajme.sk</p>
         <p><i class="fas fa-phone"></i> 0949 01 22 02</p>
+        <p><i class="fas fa-piggy-bank"></i> SK41 8330 0000 0022 0194 2423</p>
       </div>
       <div>
-        <h3 class="p-2">Sponzori:</h3>
+        <h3 class="p-2 text-center">Sponzori:</h3>
         <a href="https://delfinoterapiask.eu/">
           <img src="@/assets/images/delfinoterapia.png" alt="delfinoterapia" />
           <p>Delfínoterapia SK</p>
