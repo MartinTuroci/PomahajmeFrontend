@@ -8,17 +8,24 @@
     </section>
     <section class="disp-flex flex-space-evenly">
       <div>
-        <h3 class="p-2 text-center">Kontakty:</h3>
+        <h2 class="p-2 text-center">Kontakty:</h2>
         <p><i class="fas fa-envelope"></i> info@pomahajme.sk</p>
         <p><i class="fas fa-phone"></i> 0949 01 22 02</p>
+        <b>Transparentný účet:</b>
         <p><i class="fas fa-piggy-bank"></i> SK41 8330 0000 0022 0194 2423</p>
       </div>
       <div>
-        <h3 class="p-2 text-center">Sponzori:</h3>
-        <a href="https://delfinoterapiask.eu/">
-          <img src="@/assets/images/delfinoterapia.png" alt="delfinoterapia" />
-          <p>Delfínoterapia SK</p>
-        </a>
+        <h2 class="p-2 text-center">Partneri:</h2>
+        <div class="partners">
+          <a href="https://delfinoterapiask.eu/" target="_blank">
+            <img src="@/assets/images/delfinoterapia.png" alt="delfinoterapia" />
+            <p>Delfínoterapia SK</p>
+          </a>
+          <a href="https://eshop.rdmgaraz.sk/" target="_blank">
+            <img src="@/assets/images/rdm.png" alt="RDM Garáž" />
+            <p>RDM Garáž</p>
+          </a>
+        </div>
       </div>
     </section>
   </footer>
@@ -33,6 +40,20 @@
   min-height: $footer-height;
   a {
     color: $white;
+  }
+}
+
+.partners {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  // a {
+  //   flex-basis: 200px;
+  // }
+  img {
+    max-height: 50px;
+    width: auto;
   }
 }
 </style>
