@@ -28,6 +28,7 @@
         </div>
       </div>
     </section>
+    <section class="text-center p-2">2020 © pomahajme.sk / Všetky práva vyhradené</section>
   </footer>
 </template>
 
