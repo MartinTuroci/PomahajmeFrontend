@@ -9,11 +9,15 @@
     <section class="disp-flex flex-space-evenly">
       <div>
         <h2 class="p-2 text-center">Kontakty</h2>
-        <p><i class="fas fa-id-card"></i>Tomáš Berka zakladateľ a predseda o.z.</p>
+        <p><i class="fas fa-id-card"></i> Tomáš Berka zakladateľ a predseda o.z.</p>
         <p><i class="fas fa-envelope"></i> info@pomahajme.sk</p>
         <p><i class="fas fa-phone"></i> 0949 01 22 02</p>
         <b>Transparentný účet:</b>
-        <p><i class="fas fa-piggy-bank"></i> SK41 8330 0000 0022 0194 2423</p>
+        <p>
+          <a href="https://ib.fio.sk/ib/transparent?a=2201942423" target="_blank">
+            <i class="fas fa-piggy-bank"></i> SK41 8330 0000 0022 0194 2423
+          </a>
+        </p>
       </div>
       <div>
         <h2 class="p-2 text-center">Reklamní partneri</h2>
