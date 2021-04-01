@@ -9,6 +9,7 @@
     <section class="disp-flex flex-space-evenly">
       <div>
         <h2 class="p-2 text-center">Kontakty</h2>
+        <p><i class="fas fa-id-card"></i>Tomáš Berka zakladateľ a predseda o.z.</p>
         <p><i class="fas fa-envelope"></i> info@pomahajme.sk</p>
         <p><i class="fas fa-phone"></i> 0949 01 22 02</p>
         <b>Transparentný účet:</b>
