@@ -7,26 +7,8 @@
       </div>
     </label>
     <div class="menu">
-      <nuxt-link to="/">
-        <span @click="hideMobileSideNav">Úvod</span>
-      </nuxt-link>
-      <nuxt-link to="/o-nas">
-        <span @click="hideMobileSideNav">O nás</span>
-      </nuxt-link>
-      <nuxt-link to="/pribehy">
-        <span @click="hideMobileSideNav">Príbehy</span>
-      </nuxt-link>
-      <nuxt-link to="/spolupraca">
-        <span @click="hideMobileSideNav">Spolupráca</span>
-      </nuxt-link>
-      <nuxt-link to="/inzercia">
-        <span @click="hideMobileSideNav">Inzercia</span>
-      </nuxt-link>
-      <nuxt-link to="/euro-nadeje">
-        <span @click="hideMobileSideNav">Euro nádeje</span>
-      </nuxt-link>
-      <nuxt-link to="/kontakt">
-        <span @click="hideMobileSideNav">Kontakt</span>
+      <nuxt-link v-for="({ label, to }, i) in menuItems" :key="i" :to="to">
+        <span @click="hideMobileSideNav">{{ label }}</span>
       </nuxt-link>
     </div>
   </nav>
@@ -37,6 +19,15 @@ export default {
   data() {
     return {
       hasScrolled: this.$nuxt.$route.path !== `/`,
+      menuItems: [
+        { to: '/', label: 'Úvod' },
+        { to: '/o-nas', label: 'O nás' },
+        { to: '/pribehy', label: 'Príbehy' },
+        { to: '/spolupraca', label: 'Spolupráca' },
+        { to: '/inzercia', label: 'Inzercia' },
+        { to: '/euro-nadeje', label: 'Euro nádeje' },
+        { to: '/kontakt', label: 'Kontakt' },
+      ],
     };
   },
   watch: {
