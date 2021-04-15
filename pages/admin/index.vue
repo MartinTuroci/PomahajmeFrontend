@@ -4,7 +4,6 @@
       <div class="admin-nav p-2">
         <a @click="currentAdminComponent = 'AddStory'">Pridať príbeh</a>
         <a @click="currentAdminComponent = 'AddAuctionItem'">Pridať inzerát</a>
-        <a @click="currentAdminComponent = 'AdminTipList'">Rubriky</a>
         <a @click="logout">Odhlásiť sa</a>
       </div>
       <div class="admin-body">
@@ -20,7 +19,6 @@
 import AuthService from '@/services/authService';
 import AddStory from '@/components/admin/AddStory';
 import AddAuctionItem from '@/components/admin/AddAuctionItem';
-import AdminTipList from '@/components/admin/AdminTipList';
 
 export default {
   data() {
@@ -28,7 +26,7 @@ export default {
       currentAdminComponent: 'AddStory',
     };
   },
-  components: { AddStory, AddAuctionItem, AdminTipList },
+  components: { AddStory, AddAuctionItem },
   methods: {
     async logout() {
       await AuthService.logout();
