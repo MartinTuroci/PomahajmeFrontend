@@ -7,6 +7,7 @@
       </a>
     </section>
     <section class="disp-flex flex-space-evenly">
+      E
       <div>
         <h2 class="p-2 text-center">Kontakty</h2>
         <p><i class="fas fa-id-card"></i> Tomáš Berka zakladateľ a predseda o.z.</p>
@@ -49,6 +50,7 @@ export default {
       return [
         { label: 'Nidum - Nový level bývania', url: 'https://www.mynidum.sk/', logo: 'nidum.svg' },
         { label: 'Pajko', url: 'https://pajko.sk/', logo: 'pajko.png' },
+        { label: 'Insempre', url: 'https://insempre.sk/', logo: 'insempre.png' },
       ];
     },
     getPartners() {
