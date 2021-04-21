@@ -7,7 +7,6 @@
       </a>
     </section>
     <section class="disp-flex flex-space-evenly">
-      E
       <div>
         <h2 class="p-2 text-center">Kontakty</h2>
         <p><i class="fas fa-id-card"></i> Tomáš Berka zakladateľ a predseda o.z.</p>
