@@ -1,10 +1,13 @@
-import devConfig from './nuxt.config.dev';
-import axios from 'axios';
+import devConfig from './nuxt.config.dev'
+import axios from 'axios'
 
 let config = {
   mode: 'universal',
   head: {
     title: 'Pomahajme',
+    htmlAttrs: {
+      lang: 'sk'
+    },
     meta: [
       {
         charset: 'utf-8',
@@ -85,22 +88,20 @@ let config = {
   generate: {
     interval: 200,
     async routes() {
-      axios.defaults.baseURL = 'http://pomahajme.sk';
+      axios.defaults.baseURL = 'http://pomahajme.sk'
 
-      const [stories, auctionItems, tips] = await Promise.all([
+      const [stories, auctionItems] = await Promise.all([
         axios.get(`/api/story/ids`),
         axios.get(`/api/auction/ids`),
-        axios.get(`/api/tip/ids`),
-      ]);
+      ])
 
-      const storyRoutes = stories.data.data.map(story => ({ route: `pribehy/${story.id}`, payload: story }));
+      const storyRoutes = stories.data.data.map(story => ({ route: `pribehy/${story.id}`, payload: story }))
       const auctionRoutes = auctionItems.data.data.map(auction => ({
         route: `inzercia/${auction.id}`,
         payload: auction,
-      }));
-      const tipRoutes = tips.data.data.map(tip => ({ route: `rubrika/${tip.id}`, payload: tip }));
+      }))
 
-      return [...storyRoutes, ...auctionRoutes, ...tipRoutes];
+      return [...storyRoutes, ...auctionRoutes]
     },
   },
   /*
@@ -111,13 +112,13 @@ let config = {
      ** You can extend webpack config here
      */
     extend(config, ctx) {
-      config.resolve.alias['@'] = __dirname;
+      config.resolve.alias['@'] = __dirname
     },
   },
-};
-
-if (process.env.NODE_ENV === 'development') {
-  config = { ...config, ...devConfig };
 }
 
-export default config;
+if (process.env.NODE_ENV === 'development') {
+  config = { ...config, ...devConfig }
+}
+
+export default config

@@ -1,18 +1,15 @@
 <template functional>
-  <div class="story-item text-center scale">
-    <nuxt-link :to="`/pribehy/${props.story.id}`">
-      <div class="img-container flex-center">
-        <img
-          class="w-100"
-          :src="
-            `${parent.$URL.STORY.IMAGES_STORAGE}/${props.story.id}/${props.story.serializedImageLocations[0]}`
-          "
-        />
-      </div>
-      <div class="title-wrapper">
-        <h2 class="text-black">{{ props.story.title }}</h2>
-      </div>
-    </nuxt-link>
+  <div class="story scale">
+    <a class="story__card" :href="`/pribehy/${props.story.id}`">
+      <img
+        class="w-100 story__img"
+        :src="`https://pomahajme.sk/${parent.$URL.STORY.IMAGES_STORAGE}/${props.story.id}/${props.story.serializedImageLocations[0]}`"
+      />
+      <section class="p-1 story__text">
+        <h2 class="text-black pb-1">{{ props.story.title }}</h2>
+        <p class="text-white story__desc">{{ props.story.largeText.substr(0, 100) | removeBreak }}...</p>
+      </section>
+    </a>
     <section class="toolbar disp-flex flex-space-evenly">
       <i
         v-if="props.isAuthenticated"
@@ -40,16 +37,22 @@ export default {
       required: true,
     },
   },
+  filters: {
+    // HACK: Cannot do it within template due to Vue bug.
+    removeBreak: (val) => val.replace(/<br\/>/g, ' '),
+  },
 };
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/sass/_variables';
+
 .toolbar {
   i {
     font-size: 25px;
   }
 }
-.story-item {
+.story {
   cursor: pointer;
   border-radius: 25px;
   -webkit-box-shadow: 0px 7px 17px 4px rgba(0, 0, 0, 0.61);
@@ -58,22 +61,32 @@ export default {
 
   display: flex;
   flex-direction: column;
-}
-.title-wrapper {
-  min-height: 120px;
-  h2 {
-    word-break: break-word;
-  }
-}
-.img-container {
-  display: flex;
-  flex-direction: column;
-  height: 300px;
-  overflow: hidden;
-  border-radius: 25px 25px 0 0;
 
-  img {
-    height: auto;
+  &__text {
+    background: $pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    // background: linear-gradient(135deg, $pink 0%, $blue 93%);
+    flex-grow: 1;
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &__img {
+    height: 300px;
+    object-fit: cover;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  }
+  &__desc {
+    text-overflow: ellipsis;
+    line-clamp: 4;
   }
 }
 </style>

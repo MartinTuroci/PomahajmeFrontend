@@ -2,7 +2,7 @@
   <footer class="footer">
     <h3 class="text-center p-2 m-0">Nájdete nás aj na sociálnych sieťach</h3>
     <section class="disp-flex flex-center font-size-2">
-      <a href="https://www.facebook.com/pomahajme.sk/" target="_blank">
+      <a href="https://www.facebook.com/pomahajme.sk/" target="_blank" rel="noopener">
         <i class="fab fa-facebook-square"></i>
       </a>
     </section>
@@ -14,7 +14,7 @@
         <p><i class="fas fa-phone"></i> 0949 01 22 02</p>
         <b>Transparentný účet:</b>
         <p>
-          <a href="https://ib.fio.sk/ib/transparent?a=2201942423" target="_blank">
+          <a href="https://ib.fio.sk/ib/transparent?a=2201942423" target="_blank" rel="noopener">
             <i class="fas fa-piggy-bank"></i> SK41 8330 0000 0022 0194 2423
           </a>
         </p>
@@ -31,7 +31,13 @@
       <div>
         <h2 class="p-2 text-center">Sponzori</h2>
         <div class="partners">
-          <a v-for="(s, i) in $options.methods.getSponsors()" :key="i" :href="s.url" target="_blank">
+          <a
+            v-for="(s, i) in $options.methods.getSponsors()"
+            :key="i"
+            :href="s.url"
+            target="_blank"
+            rel="noopener"
+          >
             <img :src="require(`@/assets/images/${s.logo}`)" :alt="s.label" />
             <p>{{ s.label }}</p>
           </a>

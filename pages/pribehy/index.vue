@@ -1,5 +1,5 @@
 <template>
-  <section class="p-5">
+  <section class="p-2">
     <base-header heading="Príbehy"></base-header>
     <story-items
       :stories="stories"
