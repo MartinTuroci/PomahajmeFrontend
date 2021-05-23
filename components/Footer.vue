@@ -2,7 +2,12 @@
   <footer class="footer">
     <h3 class="text-center p-2 m-0">Nájdete nás aj na sociálnych sieťach</h3>
     <section class="disp-flex flex-center font-size-2">
-      <a href="https://www.facebook.com/pomahajme.sk/" target="_blank" rel="noopener">
+      <a
+        href="https://www.facebook.com/pomahajme.sk/"
+        target="_blank"
+        rel="noopener"
+        aria-label="Facebook share button"
+      >
         <i class="fab fa-facebook-square"></i>
       </a>
     </section>
@@ -22,7 +27,13 @@
       <div>
         <h2 class="p-2 text-center">Reklamní partneri</h2>
         <div class="partners">
-          <a v-for="(p, i) in $options.methods.getPartners()" :key="i" :href="p.url" target="_blank">
+          <a
+            v-for="(p, i) in $options.methods.getPartners()"
+            :key="i"
+            :href="p.url"
+            target="_blank"
+            rel="noopener"
+          >
             <img :src="require(`@/assets/images/${p.logo}`)" :alt="p.label" />
             <p>{{ p.label }}</p>
           </a>
