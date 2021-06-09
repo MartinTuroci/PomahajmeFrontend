@@ -2,10 +2,7 @@ const chatbox = document.getElementById('fb-customer-chat')
 chatbox.setAttribute("page_id", "1548451518729042")
 chatbox.setAttribute("attribution", "page_inbox")
 window.fbAsyncInit = function () {
-  FB.init({
-    xfbml: true,
-    version: 'v10.0'
-  })
+  FB.init({ appId: '1119182411925760', autoLogAppEvents: true, xfbml: true, version: 'v11.0' })
 }
 
   (function (d, s, id) {
