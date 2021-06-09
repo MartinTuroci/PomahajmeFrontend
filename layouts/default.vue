@@ -4,6 +4,8 @@
     <main :class="{ 'mt-70px': $nuxt.$route.path !== `/` }" class="main-content">
       <nuxt />
     </main>
+    <div id="fb-root"></div>
+    <div id="fb-customer-chat" class="fb-customerchat"></div>
     <Footer></Footer>
   </div>
 </template>
