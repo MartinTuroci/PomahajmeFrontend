@@ -60,7 +60,7 @@ let config = {
       },
     ],
     script: [
-      { async: true, defer: true, crossorigin: 'anonymous', src: 'https://connect.facebook.net/en_US/sdk.js' },
+      { async: true, defer: true, crossorigin: 'anonymous', src: 'https://connect.facebook.net/sk_SK/sdk.js' },
       { async: true, defer: true, src: '/messenger.js' },
     ]
   },
